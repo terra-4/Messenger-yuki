@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: messenger-yukina
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: PAGE_ACCESS_TOKEN
+        value: YOUR_FACEBOOK_PAGE_TOKEN
+      - key: VERIFY_TOKEN
+        value: yukina_verify_token
+      - key: LLM_API_URL
+        value: http://localhost:1234/v1/chat/completions
